@@ -5,13 +5,15 @@ namespace IisHelper.MvcApplication.Test
 {
     public class Tests : IUseFixture<IisExpressFixture>
     {
+        private const string BaseAdress = "http://localhost:53127/";
+
         #region Tests
 // ReSharper disable PossibleNullReferenceException
 
         [Fact]
         public void CanAccessRoot()
         {
-            var request = WebRequest.Create("http://localhost:53127");
+            var request = WebRequest.Create(BaseAdress);
             var response = request.GetResponse() as HttpWebResponse;
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -20,7 +22,7 @@ namespace IisHelper.MvcApplication.Test
         [Fact]
         public void CanAccessWebApi()
         {
-            var request = WebRequest.Create("http://localhost:53127/api/values");
+            var request = WebRequest.Create(BaseAdress + "api/values");
             var response = request.GetResponse() as HttpWebResponse;
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
