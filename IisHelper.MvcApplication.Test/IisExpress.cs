@@ -19,7 +19,7 @@ namespace IisHelper.MvcApplication.Test
 
         /// <summary>
         /// The path to the <c>iisexpress.exe</c> executable. Defaults to the default installation path
-        /// (e.g. <c>C:\Program Files (x86)\IIS Express\iisexpress.exe</c>), if not explicitely set
+        /// (e.g. <c>C:\Program Files (x86)\IIS Express\iisexpress.exe</c>), if not explicitely set.
         /// </summary>
         public string ExePath { get; set; }
 
@@ -34,7 +34,7 @@ namespace IisHelper.MvcApplication.Test
         public string AppPool { get; set; }
 
         /// <summary>
-        /// Gests a value indicating whether the associated IIS Express instance is currently running.
+        /// Gets a value indicating whether the associated IIS Express instance is currently running.
         /// </summary>
         public bool IsRunning { get { return _process != null; } }
 
